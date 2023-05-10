@@ -1,0 +1,131 @@
+<div class="selectRegiones">
+    <div class="separadorEditor"></div>
+                <div class="tituloEditor">
+                <h1>Editar</h1>
+            </div>
+    <select class="selectOpciones" name="forma" onchange="location = this.value;">
+        <option value="">Selecciona Region a mostrar</option>
+        <option value="/editor/16">Arica y Parinacota</option>
+        <option value="/editor/1">Tarapaca</option>
+        <option value="/editor/2">Antofagasta</option>
+        <option value="/editor/3">Atacama</option>
+        <option value="/editor/4">Coquimbo</option>
+        <option value="/editor/5">Valparaiso</option>
+        <option value="/editor/6">Ohiggins</option>
+        <option value="/editor/7">Maule</option>
+        <option value="/editor/8">Ñuble</option>
+        <option value="/editor/9">Bio-Bio</option>
+        <option value="/editor/10">Araucania</option>
+        <option value="/editor/11">Los Ríos</option>
+        <option value="/editor/12">Los Lagos</option>
+        <option value="/editor/13">Aysen</option>
+        <option value="/editor/14">Magallanes</option>
+        <option value="/editor/15">Metropolitana</option>
+    </select>
+  <p>La cantidad de atractivos es: <span>{{count}}</span></p>
+
+    <div id="mantenedorEditor">
+        <div class="muestraEditor">
+            {{#each atractivos}}
+            <div id="lugar">
+                <img id="mantenedorImg" src="{{this.imgurl}}" width="100px">
+                <div class="iconosDeletEdit">
+                    <a href="/edit/{{this.atractivo_id}}" data-bs-toggle="modal"
+                        data-bs-target="#editModal{{this.atractivo_id}}"> <span
+                            class="material-symbols-outlined">edit</span></a>
+                    <!-- MODAL -->
+                    <div class="modal fade" id="editModal{{this.atractivo_id}}">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <img src="/imgs/logo_nav.png" width="150px" alt="">
+                                    <hr>
+                                    <h1 class="modal-title fs-1" id="staticBackdropLabel">Editar atractivo</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/mantenedor/update" method="POST">
+                                        <label for="">ID Atractivo</label>
+                                        <input class="form-control" type="text" id="idusuario" name="atractivo_id"
+                                            placeholder="id" value="{{this.atractivo_id}}" required>
+                                        <label for="">ID Atractivo</label>
+                                        <input class="form-control" type="text" id="name" name="nombre"
+                                            value="{{this.nombre}}" required>
+                                        <label for="">Descripcion</label>
+                                        <input class="form-control taller" type="text" id="lastname" name="descripcion"
+                                            value="{{this.descripcion}}" required>
+                                        <label for="">URL Imagen</label>
+                                        <input class="form-control" type="text" id="lastname" name="imgurl"
+                                            value="{{this.imgurl}}" required>
+                                        <label for="">ID Categoria</label>
+                                        <input class="form-control" type="text" id="lastname" name="categorias_id"
+                                            value="{{this.categorias_id}}" required>
+                                        <label for="">ID Región</label>
+                                        <input class="form-control" type="text" id="password" name="regiones_id"
+                                            value="{{this.regiones_id}}" required>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-dark"
+                                                data-bs-dismiss="modal">Cerrar</button>
+                                            <button type="submit" class="btn btn-dark">Guardar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="confirmacion" class="popup">
+                        <h3>¿Está seguro de que desea eliminar este elemento?</h3>
+                        <button id="confirmar">Aceptar</button>
+                        <button id="cancelar">Cancelar</button>
+                    </div>
+
+                    <style>
+                        .popup {
+                            display: none;
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background-color: rgba(0, 0, 0, 0.5);
+                            z-index: 999;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    </style>
+                    <script>
+                        const eliminarBoton = document.querySelector('#eliminar');
+                        const confirmacionPopup = document.querySelector('#confirmacion');
+                        const confirmarBoton = document.querySelector('#confirmar');
+                        const cancelarBoton = document.querySelector('#cancelar');
+
+                        eliminarBoton.addEventListener('click', () => {
+                            confirmacionPopup.style.display = 'flex';
+                        });
+
+                        confirmarBoton.addEventListener('click', () => {
+                            confirmacionPopup.style.display = 'none';
+
+                        });
+
+                        cancelarBoton.addEventListener('click', () => {
+                            confirmacionPopup.style.display = 'none';
+                        });
+
+                    </script>
+
+
+
+                </div>
+                <p id="mantenedorId">ID: {{this.atractivo_id}}</p>
+                <h2 id="mantenedorNombre">{{this.nombre}}</h2>
+                <p id="mantenedorDescripcion">{{this.descripcion}}</p>
+
+            </div>
+            {{/each}}
+
+        </div>
+    </div>

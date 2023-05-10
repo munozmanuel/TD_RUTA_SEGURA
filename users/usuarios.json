@@ -1,0 +1,29 @@
+{
+    "usuarios": [
+      {
+        "nombre": "Juan",
+        "region": "Metropolitana",
+        "comentario": "Hoy en la mañana vi un choque en la Ruta 5 Norte, había mucho tráfico y tuve que desviarme."
+      },
+      {
+        "nombre": "María",
+        "region": "Valparaíso",
+        "comentario": "Ayer en la tarde hubo un taco enorme en la Ruta 68, estuve varada por más de una hora."
+      },
+      {
+        "nombre": "Pedro",
+        "region": "Biobío",
+        "comentario": "Hace dos días vi un auto volcado en la Ruta 5 Sur, por suerte el conductor estaba bien."
+      },
+      {
+        "nombre": "Carla",
+        "region": "Los Lagos",
+        "comentario": "El fin de semana pasado hubo una manifestación en la Ruta 7, tardé mucho en llegar a mi destino."
+      },
+      {
+        "nombre": "Luis",
+        "region": "Antofagasta",
+        "comentario": "Hace una semana vi un accidente en la Ruta 1, llamé a emergencias para que pudieran ayudar."
+      }
+    ]
+  }

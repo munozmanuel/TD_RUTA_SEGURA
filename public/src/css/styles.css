@@ -1,0 +1,954 @@
+:root {
+    --ruta_Red: rgb(205, 0, 33);
+    --ruta_Red_A: rgb(205, 0, 33, .85);
+    --ruta_DarkRed: rgb(188, 0, 32);
+    --ruta_Black: rgb(0, 0, 0);
+    --ruta_Gray: rgb(30, 30, 30);
+    --ruta_LightGray: rgb(95, 95, 95);
+    --ruta_White: rgb(235, 234, 232);
+    --ruta_White02: rgb(255, 255, 255);
+
+    /* --ruta_Red: RGB(114,199,196);
+    --ruta_Red_A: rgba(0, 205, 140, 0.85);
+    --ruta_DarkRed: RGB(235,201,103); 
+    --ruta_Black: rgb(0, 0, 0);
+    --ruta_Gray: rgb(30, 30, 30);
+    --ruta_LightGray: rgb(95, 95, 95);
+    --ruta_White: rgb(235, 234, 232);
+    --ruta_White02: rgb(255, 255, 255); */
+
+
+    /* --ruta_Red: rgb(53, 130, 212);
+    --ruta_Red_A: rgb(67, 67, 176);
+    --ruta_DarkRed: rgb(51, 51, 146);
+    --ruta_Black: RGB(0, 0, 0);
+    --ruta_Gray: RGB(30, 30, 30);
+    --ruta_LightGray: RGB(95, 95, 95);
+    --ruta_White: RGB(235, 234, 232);  */
+
+}
+
+@font-face {
+    font-family: "alm_Light";
+    src: url(../fonts/Almarai-Light.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "alm_Regular";
+    src: url(../fonts/Almarai-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "alm_Bold";
+    src: url(../fonts/Almarai-Bold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "alm_Extra";
+    src: url(../fonts/Almarai-ExtraBold.ttf) format("truetype");
+}
+
+
+.botonLogin {
+    border: 2px solid var(--ruta_Red);
+    font-family: alm_bold;
+    color: var(--ruta_White);
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: var(--ruta_Gray) !important;
+    
+}
+
+.botonLogin:hover {
+    border: 2px solid var(--ruta_Red);
+    background-color: var(--ruta_DarkRed) !important;
+
+    color: var(--ruta_White);
+    transition: all .5s;
+}
+
+.botonRegistrate {
+    border: 1px solid var(--ruta_DarkRed);
+    font-family: alm_bold;
+    color: var(--ruta_DarkRed);
+    background-color: var(--ruta_White) !important;
+}
+
+.botonRegistrate:hover {
+    font-family: alm_bold;
+    background-color: var(--ruta_Gray) !important;
+    color: var(--ruta_White);
+    font-kerning: auto;
+    transition: all .5s;
+}
+
+
+/* MANTENEDOR ITEMS */
+.agregarAtractivos {
+    font-family: alm_bold;
+    color: var(--ruta_White02);
+}
+
+.botonesFiltro {
+    width: 100%;
+    max-height: 40px;
+    background-color: var(--ruta_White);
+    display: flex;
+    flex: auto;
+    margin: 0px auto;
+    justify-content: center;
+    align-items: first baseline;
+    gap: 15px;
+}
+
+/* .botonesFiltro{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0px auto;
+    justify-content: center;
+    align-items: first baseline; 
+    gap: 15px;
+} */
+
+.botonCat {
+    color: var(--ruta_Black);
+    max-width: 100px;
+    background-color: var(--ruta_White) !important;
+}
+
+.botonCat:hover {
+    transition: all .5s;
+    background-color: var(--ruta_Gray) !important;
+}
+
+.muestra {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: whitesmoke;
+    padding: 10px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+@keyframes example {
+    from {
+        scale: 0%;
+
+        /* rotate: 45deg;} */
+    }
+
+    to {
+        scale: 100%;
+
+        /* rotate: 0deg;} */
+    }
+}
+
+#lugar {
+    animation-name: example;
+    animation-duration: .8s;
+    max-height: 330px;
+    max-width: 200px;
+    min-width: 200px;
+    min-height: 330px;
+    box-shadow: 8px 8px 10px var(--ruta_White);
+    gap: 10px;
+    margin: 10px auto;
+    background-color: var(--ruta_White02);
+    padding: 10px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px solid var(--ruta_DarkRed);
+    flex-wrap: nowrap;
+    justify-content: left;
+}
+
+
+#lugar :nth-child(n) {
+    /* border: 1px solid black; 
+     line-height: 10px; */
+}
+
+#mantenedorImg {
+    margin: 0px auto;
+    border-radius: 20px;
+    max-width: 100px;
+    max-height: 100px;
+    min-height: 100px;
+
+}
+
+#mantenedorId {
+    margin-top: 4px;
+    border-top: 1px solid var(--ruta_LightGray);
+    border-bottom: 1px solid var(--ruta_LightGray);
+    font-family: alm_bold;
+    font-size: 14px;
+    color: rgb(75, 75, 75);
+}
+
+#mantenedorNombre {
+    font-size: 14px;
+    font-family: alm_bold;
+    max-width: 100%;
+}
+
+#mantenedorDescripcion {
+    min-height: 100%;
+    font-family: alm_light;
+    overflow: hidden;
+    /* white-space: nowrap; */
+    /* color: red; */
+}
+
+
+#mantenedorCategoriaId {
+    padding: 10px;
+}
+
+#botonEliminar {
+    padding: 4px;
+    border-radius: 0px;
+    margin: 0px;
+    font-family: alm_Bold;
+    color: var(--ruta_White);
+    background-color: var(--ruta_Gray);
+}
+
+* {
+    font-family: alm_Regular;
+    font-size: 12px;
+}
+
+.form-select {
+    justify-content: center;
+    align-items: center;
+    background-color: red !important;
+    max-width: 70% !important
+}
+
+
+
+
+#404 {
+    color: red;
+}
+
+.selectOpciones {
+    font-family: alm_bold;
+    color: var(--ruta_White);
+    min-width: 100%;
+    min-height: 40px;
+    background-color: var(--ruta_DarkRed);
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+#opciones01 {
+    width: 100% !important;
+    background-color: var(--ruta_White) !important;
+    ;
+}
+
+#opciones02 {
+    width: 100% !important;
+    background-color: var(--ruta_White) !important;
+}
+
+.botonModal {
+    background-color: var(--ruta_DarkRed);
+    color: var(--ruta_White);
+    border-radius: 5px;
+    border: 0px;
+    min-width: 100px !important;
+    max-height: 30px !important;
+}
+
+/* #mantenedor{    
+    border: 1px solid red;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 70px;
+    max-width: 600px;
+} */
+
+#mantenedor {
+    margin: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+    #mantenedor {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+input,
+label {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 300px;
+}
+
+.modal-content {
+    /* max-height: 500px; */
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: all 1s;
+}
+
+
+#atractivos {
+    padding: 1rem;
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--ruta_White);
+}
+
+@keyframes atractivos {
+    from {
+        scale: 0%;
+    }
+
+    to {
+        scale: 100%
+    }
+}
+
+.cardAtractivo {
+    background-color: ;
+    max-width: 250px;
+    min-height: 300px;
+    max-height: 300px;
+    box-shadow: 7px 5px 5px rgb(214, 214, 214);
+    border-radius: 5px;
+    overflow: hidden;
+    animation-name: atractivos;
+    animation-duration: .7s;
+    animation-timing-function: ease-in-out;
+    padding: 15px;
+}
+
+.cardAtractivo .cardImagen {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.cardAtractivo .cardTitulo {
+    font-family: alm_light;
+    font-size: 20px;
+    background-color: ;
+
+    margin: 10px 0;
+}
+
+.cardAtractivo .cardDescripcion {
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup.active {
+    display: flex;
+}
+
+.popup-content {
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*MODAL EDIT UPDATE*/
+.taller {
+    background-color: var(--ruta_White);
+    height: 100px;
+    width: 300px;
+    /* Hacer mas alto el cuadro de texto */
+}
+
+.inputEditar {
+    color: var(--ruta_Gray);
+    border-radius: 6px !important;
+    background-color: var(--ruta_White) !important;
+}
+
+/* VISTA EDITOR */
+.mantenedorEditor {
+    border: 1px solid rgb(72, 255, 0);
+}
+
+.muestraEditor {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--ruta_White);
+}
+
+.tituloEditor h1 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: alm_bold;
+    font-weight: bolder;
+}
+
+.separadorEditor {
+    min-height: 2px;
+    background-color: var(--ruta_DarkRed);
+}
+
+.ingreso {
+    max-width: 768px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--ruta_DarkRed);
+    padding: 10%;
+    color: black;
+}
+
+.ingreso label {
+    color: var(--ruta_White);
+    font-family: alm_light;
+}
+
+.ingreso input {
+    color: black;
+    background-color: var(--ruta_White) !important;
+    border-radius: 10px !important;
+}
+
+.botonIngresa {
+    /* Botón que ingresa un nuevo atractivo a la BBDD*/
+    border-radius: 5px;
+    background-color: var(--ruta_Gray);
+    color: var(--ruta_White);
+    padding: 10px;
+    margin: 20px;
+}
+
+.central {
+    background-color: var(--ruta_Gray);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+/* #botonesCategorias {  CATEGORIAS DEL FRONT
+    display: flex;
+    background-color: var(--ruta_DarkRed);
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .btnCat {
+    background-color: white !important;
+    color: var(--ruta_DarkRed) !important;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 6px;
+    margin: 3px;
+    border: 0px;
+    color: var(--ruta_White);
+    background-color: var(--ruta_Gray);
+} */
+
+.central .comentario {
+    color: var(--ruta_White);
+    padding: 30px;
+    /* border: 1px solid var(--ruta_White); */
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: justify;
+    min-width: 200px;
+    max-width: 400px;
+    min-height: 200px;
+
+}
+
+
+#geo {
+    background-color: aquamarine !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--ruta_White);
+    border: 0px !important;
+}
+
+
+/* CARD API WEATHER */
+@keyframes rotacion {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.card {
+    border-radius: 0px !important;
+    background-color: var(--ruta_Gray) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid wheat !important;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.card-text {
+    color: var(--ruta_White);
+    padding-top: 0px;
+    line-height: 35px;
+    justify-content: center;
+    text-align: center;
+    font-family: alm_Bold;
+    font-size: 50px;
+}
+
+.ciudad {
+    font-size: medium;
+    color: var(--ruta_White);
+    text-transform: uppercase;
+}
+
+.card-img-top {
+    margin: 20px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 120px !important;
+    height: 120px !important;
+    animation: rotacion 40s infinite;
+    animation-timing-function: linear;
+}
+
+.separador {
+    background-color: var(--ruta_DarkRed);
+    max-height: 3px;
+}
+
+.separadorColor {
+    min-height: 200px;
+}
+
+
+.nav-link {
+    color: var(--ruta_White) !important;
+    font-family: alm_Regular !important;
+}
+
+.descripcion {
+
+    max-width: 100%;
+    font-family: "almarai";
+    text-align: justify;
+    font-size: 19px;
+    font-weight: 500;
+    margin: 20px;
+    border: 1px solid lightgray;
+    background-color: ;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.descripcion img {
+    border: 13px solid lightgray;
+    border-radius: 20px;
+    margin: 0px auto;
+    min-width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.contenedorMapa {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 50%;
+}
+
+.contacto {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+
+.txtfooter a {
+
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+
+.txtfooter a :hover {
+    color: rgb(16, 47, 222);
+    font-weight: 700;
+}
+
+.titulopag {
+    background-color: var(--ruta_White);
+    max-width: 500px;
+}
+
+.lottie {
+    padding-left: 50px;
+    max-width: 400px;
+}
+
+@media (max-width: 768px) {
+    .lottie {
+        display: none;
+        padding-left: 50px;
+        max-width: 300px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar :nth-child(n) {
+        justify-content: center !important;
+        align-items: center !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .descripcion {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 0px auto;
+        border-radius: 5px;
+        color: rgb(80, 116, 148);
+    }
+}
+
+@media (max-width: 768px) {
+    .formularioContacto {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 0px auto;
+        border-radius: 5px;
+        color: rgb(80, 116, 148);
+    }
+}
+
+@media (max-width: 768px) {
+    .formularioContacto h2 {
+        font-size: 40px;
+        padding: 10px;
+        font-family: "almarai";
+        font-weight: 900;
+
+    }
+}
+
+@media (max-width: 768px) {
+    .botonEnviar {
+        width: 100%;
+        border-radius: 80px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .botonvamos {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .formulario {
+
+        display: flex;
+        flex-direction: ;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--ruta_Gray);
+        min-width: 100%;
+        min-height: 300px;
+        gap: 5px;
+        margin: 0px auto;
+
+
+    }
+}
+
+.promedio {
+    height: 2px;
+    background-color: var(--ruta_Gray);
+}
+
+
+.cabecera {
+    padding-left: 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    background-image: url(https://revistaenfoque.cl/wp-content/uploads/2020/05/TorresDelPaine-guanacos-960x1000.jpg);
+    background-position: 70%;
+    background-blend-mode: overlay;
+    min-height: 400px;
+    max-height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(85, 85, 85);
+}
+
+.dondevamos h2 {
+    color: var(--ruta_White);
+    font-family: "alm_Bold";
+    font-size: 30px;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+#CTA {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@keyframes pregunta {
+    from {
+        scale: 0%;
+    }
+    to {
+        scale: 100%;
+    }
+}
+
+#CTA h1 {
+    animation-name: pregunta;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+    padding: 30px;
+    font-size: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+label {
+    color: rgb(80, 116, 148);
+    line-height: 15px;
+    padding: 10px;
+}
+
+.mapa {
+    max-width: 100%;
+    border-radius: 20px;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: fr;
+}
+
+.formularioContacto h2 {
+    font-size: 50px;
+    padding-right: 100px;
+    padding-left: 0px;
+    font-family: "almarai";
+    font-weight: 900;
+    padding-top: 0px;
+}
+
+.formulario {
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 50%;
+    max-height: 400px;
+    gap: 5px;
+}
+
+.formulario :nth-child(n) {
+    margin: 0px auto;
+}
+
+.contenedorDatos :nth-child(n) {
+    z-index: -1;
+    display: inline-block;
+}
+
+.distanciaTiempo {
+
+    top: 20px;
+    left: 20px;
+    position: relative;
+}
+
+.contenedorDistancia,
+.contenedorDuracion :nth-child(n) {
+    color: var(--ruta_White);
+}
+
+#iconoDistancia {
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.contenedorDistancia {
+    display: flex;
+}
+
+.cifraDistancia,
+.cifraDuracion {
+    font-size: 40px;
+    font-family: alm_Bold;
+    text-indent: 60px;
+}
+
+.tituloComentario {
+    font-family: alm_light;
+    font-size: 12px;
+    text-indent: 60px;
+    font-weight: 800;
+}
+
+.cifraDuracion .botonvamos {
+
+    border-radius: 2px !important;
+    font-family: alm_bold;
+    width: 300px !important;
+    background-color: var(--ruta_DarkRed) !important;
+    color: var(--ruta_White) !important;
+    transition: width 1s;
+}
+
+.botonvamos:hover {
+    border-radius: 2px !important;
+    font-family: alm_bold;
+    width: 350px !important;
+    background-color: var(--ruta_Gray) !important;
+    color: var(--ruta_White) !important;
+    transition: all 1s;
+}
+
+.botonvamos:leave .botonvamos a {
+    text-decoration: none;
+}
+
+.formContacto {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContacto input {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    min-width: 400px;
+    padding: 10px;
+    max-height: 20px;
+    border-radius: 2px;
+}
+
+.separadorVideo {
+    color: var(--ruta_Black);
+    background-size: cover;
+    background-clip: content-box;
+    background-image: url(https://images.unsplash.com/photo-1518623001395-125242310d0c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg);
+    max-height: 250px;
+    min-height: 200px;
+}
+.leaflet-control-container .leaflet-routing-container-hide {
+    display: none;
+}
+
+.formularioContacto {
+    color: var(--ruta_White);
+    background-color: var(--ruta_White);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+}
+
+#formcontacto {
+    border-radius: 5px;
+}
+
+.btnform {
+    font-family: alm_bold;
+    width: 100% !important;
+    background-color: var(--ruta_Gray) !important;
+    color: var(--ruta_White) !important;
+    outline: none;
+    border: none;
+    padding: 10px;
+}
+
+.formularioContacto label {
+    color: var(--ruta_White);
+}
+
+@media (max-width: 768px) {
+    .formContacto {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        margin: 0px auto;
+        border-radius: 5px;
+        color: rgb(80, 116, 148);
+    }
+}

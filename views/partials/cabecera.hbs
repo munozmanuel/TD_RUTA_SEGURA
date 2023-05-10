@@ -1,0 +1,69 @@
+<div class="cabecera">
+
+    <form class="formulario" action="">
+        <div class="soporte">
+            <div class="dondevamos">
+                <h2> ¿Dónde vamos?</h2>
+            </div>
+        </div>
+        <div class="form-floating">
+            <select  class="form-select" id="opciones01"
+                aria-label="Floating label select example">
+                <option selected>Selecciona tu región de origen</option>
+                <option value="-18.4746,-70.29792" name="arica">Arica y Parinacota</option>
+                <option value="-20.21326, -70.15027">Tarapacá</option>
+                <option value="-23.65236, -70.3954">Antofagasta</option>
+                <option value="-27.36679,-70.3314" name="atacama">Atacama</option>
+                <option value="-29.95332,-71.33947">Coquimbo</option>
+                <option value="-33.45694,-70.64827">Metropolitana</option>
+                <option value="-33.036,-71.62963"name="valparaiso">Valparaíso</option>
+                <option value="-34.17083,-70.74444">O´higgins</option>
+                <option value="-35.4264, -71.65542">Maule</option>
+                <option value="-36.60664, -72.10344">Ñuble</option>
+                <option value="-36.82699, -73.04977">Biobío</option>
+                <option value="-38.73965,-72.59842">Araucanía</option>
+                <option value="-39.81422, -73.24589">Los Ríos</option>
+                <option value="-41.4693, -72.94237">Los Lagos</option>
+                <option value="-45.57524, -72.06619">Aysén</option>
+                <option value="-53.15483, -70.91129">Magallanes</option>
+            </select>
+            {{!-- <label for="floatingSelect">Desde:</label> --}}
+        </div>
+
+        <form class="formulario" action="">
+            <div class="form-floating">
+                <select class="form-select"  id="opciones02"
+                    aria-label="Floating label select example">
+                    <option selected>Selecciona tu región destino</option>
+                    <option value="-18.4746,-70.29792" dataValue="16" name="arica">Arica y Parinacota</option>
+                <option value="-20.21326, -70.15027" dataValue="1">Tarapacá</option>
+                <option value="-23.65236, -70.3954" dataValue="2"> Antofagasta</option>
+                <option value="-27.36679,-70.3314" dataValue="3">Atacama</option>
+                <option value="-29.95332,-71.33947" dataValue="4">Coquimbo</option>
+                <option value="-33.45694,-70.64827" dataValue="15">Metropolitana</option>
+                <option value="-33.036,-71.62963" dataValue="5">Valparaíso</option>
+                    <option value="-34.17083,-70.74444" dataValue="6">O´higgins</option>
+                    <option value="-35.4264, -71.65542" dataValue="7">Maule</option>
+                    <option value="-36.60664, -72.10344" dataValue="8">Ñuble</option>
+                    <option value="-36.82699, -73.04977" dataValue="9">Biobío</option>
+                    <option value="-38.73965,-72.59842" dataValue="10">Araucanía</option>
+                    <option value="-39.81422, -73.24589" dataValue="11">Los Ríos</option>
+                    <option value="-41.4693, -72.94237" dataValue="12">Los Lagos</option>
+                    <option value="-45.57524, -72.06619" dataValue="13">Aysén</option>
+                    <option value="-53.15483, -70.91129" dataValue="14">Magallanes</option>
+                </select>
+                {{!-- <label for="floatingSelect">Hacia:</label> --}}
+            </div>
+            {{!-- <input class="botonvamos" onclick="ubi()" type="button" value="Vamos!"> --}}
+        </form>
+
+        
+    </form>
+    <div class="lottie">
+            <lottie-player class="lottie" id="lottieRuta" src="/imgs/ruta.json" background="transparent" width="50px"
+                speed="1" autoplay reverse></lottie-player>
+        </div>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+</div>

@@ -1,0 +1,25 @@
+[
+    {  
+      "id": 1,
+      "title": "Desierto Florido",
+      "img": "./imgs/atacama/florido.jpg"
+    },
+    {  
+      "id": 2,
+      "title": "Lagunas Altiplánicas",
+      "img": "./imgs/atacama/lagundas.jpg"
+    },
+    {  
+      "id": 3,
+      "title": "Salar de Atacama",
+      "img": "./imgs/atacama/salar.jpg"
+    },
+    {  
+      "id": 3,
+      "title": "San Pedro de Atacama",
+      "img": "./imgs/atacama/sanpedro.jpg"
+    }
+
+
+  ]
+  

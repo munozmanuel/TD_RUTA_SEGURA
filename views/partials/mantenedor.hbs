@@ -1,0 +1,199 @@
+<div class="selectRegiones">
+    <select class="selectOpciones" name="forma" onchange="location = this.value;">
+        <option value="">Selecciona Region a mostrar</option>
+        <option value="16">Arica y Parinacota</option>
+        <option value="1">Tarapaca</option>
+        <option value="2">Antofagasta</option>
+        <option value="3">Atacama</option>
+        <option value="4">Coquimbo</option>
+        <option value="5">Valparaiso</option>
+        <option value="6">Ohiggins</option>
+        <option value="7">Maule</option>
+        <option value="8">Ñuble</option>
+        <option value="9">Bio-Bio</option>
+        <option value="10">Araucania</option>
+        <option value="11">Los Ríos</option>
+        <option value="12">Los Lagos</option>
+        <option value="13">Aysen</option>
+        <option value="14">Magallanes</option>
+        <option value="15">Metropolitana</option>
+    </select>
+    <div id="mantenedor">
+
+        <div class="ingreso">
+            <form id="formul" action="/mantenedor" method="POST">
+                {{!-- <label for="regiones_id">Id Region</label>
+                <input id="regiones_id" name="regiones_id" placeholder="Identificador ID" required> --}}
+                <h1 class="agregarAtractivos">Agregar Atractivos</h1>
+                <label for="Región">Selecciona Region a modificar</label>
+                <select id="regiones_id" name="regiones_id" required>
+                    <option value="16">Arica y Parinacota </option>
+                    <option value="1">Tarapacá </option>
+                    <option value="2"> Antofagasta </option>
+                    <option value="3"> Atacama</option>
+                    <option value="4"> Coquimbo</option>
+                    <option value="5"> Valparaíso</option>
+                    <option value="6"> O'Higgins</option>
+                    <option value="7"> Maule</option>
+                    <option value="8"> Ñuble</option>
+                    <option value="9"> Biobío</option>
+                    <option value="10"> Araucanía</option>
+                    <option value="11"> Los Ríos</option>
+                    <option value="12"> Los Lagos </option>
+                    <option value="13"> Aysén</option>
+                    <option value="14"> Magallanes</option>
+                    <option value="15"> Metropolitana de Santiago</option>
+                </select>
+
+
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre del atractivo" required>
+
+                <label for="descripcion">Descripcion</label>
+                <textarea type="text" name="descripcion" placeholder="Descripcion" required
+                    style="min-width: 350px;min-height:150px;resize: none"></textarea>
+
+                <label for="imgurl">Img URL:</label>
+                <input id="imgurl" name="imgurl" placeholder="Ingresa el link para la imagen" required></input>
+                <label for="categorias_id">Categoría</label>
+                <select id="categorias_id" name="categorias_id" required>
+                    <option value="1">Playas </option>
+                    <option value="2">Cultura </option>
+                    <option value="3"> Spot Fotografía </option>
+                    <option value="4"> Naturaleza</option>
+                </select>
+                <button type="submit" class="botonIngresa">Agregar Dato</button>
+            </form>
+        </div>
+        <div class="muestra">
+            <div class="botonesFiltro">
+                <a href="/api/v1/atractivos/categoria/1">
+                    <div class="btn btn-primary botonCat">Playas</div>
+                </a>
+                <a href="/api/v1/atractivos/categoria/2">
+                    <div class="btn btn-primary botonCat">Cultura</div>
+                </a>
+                <a href="/api/v1/atractivos/categoria/3">
+                    <div class="btn btn-primary botonCat">Fotografía</div>
+                </a>
+                <a href="/api/v1/atractivos/categoria/4">
+                    <div class="btn btn-primary botonCat">Naturaleza</div>
+                </a>
+            </div>
+            
+
+            {{#each atractivos}}
+            <div id="lugar">
+
+                <img id="mantenedorImg" src="{{this.imgurl}}" width="100px">
+                <div class="iconosDeletEdit">
+                    {{!-- <a href="/mantenedor/{{this.atractivo_id}}?_method=DELETE"><span
+                            class="material-symbols-outlined">
+                            delete
+                        </span></a> --}}
+                    <a href="/mantenedor/{{this.atractivo_id}}?_method=DELETE"
+                        onclick="return confirm('¿Estás seguro de eliminar este elemento?. Esta acción no se puede deshacer')">
+                        <span class="material-symbols-outlined">delete</span>
+                    </a>
+                    <a href="/edit/{{this.atractivo_id}}" data-bs-toggle="modal" data-bs-target="#editModal{{this.atractivo_id}}" > <span class="material-symbols-outlined">edit</span></a>
+
+
+<!-- MODAL -->
+                            <div class="modal fade" id="editModal{{this.atractivo_id}}">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <img src="/imgs/logo_nav.png" width="150px" alt="">
+                                            <hr>
+                                            <h1 class="modal-title fs-1" id="staticBackdropLabel">Editar atractivo</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="/mantenedor/update" method="POST">
+                                                <label for="">ID Atractivo</label>
+                                                <input class="form-control" type="text" id="idusuario" name="atractivo_id" placeholder="id" value="{{this.atractivo_id}}" required>
+                                                <label for="">ID Atractivo</label>
+                                                <input class="form-control" type="text" id="name"      name="nombre" value="{{this.nombre}}" required>
+                                                <label for="">Descripcion</label>
+                                                <textarea class="form-control taller" type="text" id="lastname"  name="descripcion" value="{{this.descripcion}}" required>{{this.descripcion}}</textarea>
+                                                <label for="">URL Imagen</label>
+                                                <input class="form-control" type="text" id="lastname"  name="imgurl" value="{{this.imgurl}}" required>
+                                                <label for="">ID Categoria</label>
+                                                <input class="form-control" type="text" id="lastname"  name="categorias_id" value="{{this.categorias_id}}" required>
+                                                <label for="">ID Región</label>
+                                                <input class="form-control" type="text" id="password"  name="regiones_id" value="{{this.regiones_id}}" required>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-dark"
+                                                            data-bs-dismiss="modal">Cerrar</button>
+                                                        <button type="submit" class="btn btn-dark">Guardar</button>
+                                                    </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                    <div id="confirmacion" class="popup">
+                        <h3>¿Está seguro de que desea eliminar este elemento?</h3>
+                        <button id="confirmar">Aceptar</button>
+                        <button id="cancelar">Cancelar</button>
+                    </div>
+
+                    <style>
+                        .popup {
+                            display: none;
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background-color: rgba(0, 0, 0, 0.5);
+                            z-index: 999;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    </style>
+                    <script>
+                        const eliminarBoton = document.querySelector('#eliminar');
+                        const confirmacionPopup = document.querySelector('#confirmacion');
+                        const confirmarBoton = document.querySelector('#confirmar');
+                        const cancelarBoton = document.querySelector('#cancelar');
+
+                        eliminarBoton.addEventListener('click', () => {
+                            confirmacionPopup.style.display = 'flex';
+                        });
+
+                        confirmarBoton.addEventListener('click', () => {
+                            confirmacionPopup.style.display = 'none';
+
+                        });
+
+                        cancelarBoton.addEventListener('click', () => {
+                            confirmacionPopup.style.display = 'none';
+                        });
+
+                    </script>
+
+
+
+                </div>
+                <p id="mantenedorId">ID: {{this.atractivo_id}}</p>
+                <h2 id="mantenedorNombre">{{this.nombre}}</h2>
+                <p id="mantenedorDescripcion">{{this.descripcion}}</p>
+                 <p id="mantenedorCategoriaId">{{this.categorias_id}}</p> 
+
+                {{!-- <form action="/mantenedor/{{this.atractivo_id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" id="botonEliminar">Eliminar</button>
+                </form> --}}
+
+
+            </div>
+            {{/each}}
+
+            {{!--
+            </table> --}}
+
+        </div>
+    </div>
