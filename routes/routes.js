@@ -33,18 +33,14 @@ router.get('/404', (req,res)=>{
 //   })
 // });
 
-
-
 //ROUTER METODOS CONTROLLER
 router.post('/register', authController.register)
 router.post('/login', authController.login)
 
 
-
 // router.get("/", (req, res) => {
 //   res.render("404");
 // });
-
 
 
 module.exports = router;

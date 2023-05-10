@@ -48,6 +48,30 @@
     src: url(../fonts/Almarai-ExtraBold.ttf) format("truetype");
 }
 
+.mensaje404{
+    margin-top: 100px !important;
+    border: 1px solid var(--ruta_Black);
+    border-radius: 4px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    max-height: 300px;
+    line-height: 0px;
+}
+ #error404{
+    font-size: 150px !important;
+    color: var(--ruta_DarkRed);
+ }
+
+.mensaje404 :nth-child(n){
+    font-size: 30px !important;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    color: var(--ruta_DarkRed);
+}
 
 .botonLogin {
     border: 2px solid var(--ruta_Red);
@@ -232,12 +256,9 @@
     max-width: 70% !important
 }
 
-
-
-
-#404 {
+/* #404 {
     color: red;
-}
+} */
 
 .selectOpciones {
     font-family: alm_bold;
