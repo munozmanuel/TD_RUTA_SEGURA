@@ -41,8 +41,7 @@ exports.login = async (req, res) => {
         const usuario = req.body.usuario
         const pass = req.body.pass
         console.log(usuario + "-" + pass);
-
-        if (!usuario || !pass) {
+            if (!usuario || !pass) {
             console.log("-ERR----No se han ingresado datos o falta alguno------")
             res.render('login', {
                 alert: true,
