@@ -6,7 +6,7 @@ const app = express.Router()
 ///////////////////////////////////////////////
 //----OBTENIENDO ATRACTIVOS SEGÚN REGION----//
 /////////////////////////////////////////////
-app.get("/:regiones_id", async (req, res) => {
+app.get("/region/:regiones_id", async (req, res) => {
   const regiones_id = req.params.regiones_id;
   const resultados = await fetch(`http://localhost:4000/api/v1/atractivos/${regiones_id}`);
   const data = await resultados.json();
