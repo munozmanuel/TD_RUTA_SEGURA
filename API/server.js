@@ -117,10 +117,10 @@ app.put("/api/v1/atractivos/editar/:atractivo_id", async (req, res) => {
 
 
 app.get("/api/v1/atractivos/cantidad/count", async (req, res) => {
-  // const resultado = await pool.query("SELECT COUNT(atractivo_id) FROM atractivos");
-  const resultado = await pool.query(`SELECT categorias_id, COUNT(atractivo_id) as total_atractivos
-  FROM atractivos
-  GROUP BY categorias_id`);
+  const resultado = await pool.query("SELECT COUNT(atractivo_id) FROM atractivos");
+  // const resultado = await pool.query(`SELECT categorias_id, COUNT(atractivo_id) as total_atractivos
+  // FROM atractivos
+  // GROUP BY categorias_id`);
   res.json(resultado.rows)
 });
 
