@@ -16,9 +16,6 @@ router.get("/editor", (req, res) => {
   res.render("editor");
 });
 
-// router.get("/listado", (req, res) => {
-//   res.render("listado")
-//   });
 
 router.get("/listado", async (req, res) => {
   const fetchAtractivos = fetch(`http://localhost:4000/api/v1/listadoAtractivos`);
@@ -37,8 +34,6 @@ router.get("/listado", async (req, res) => {
   });
 });
 
-
-
 router.get('/login', (req,res)=>{
   res.render('login', {alert:false})
 })
@@ -47,25 +42,9 @@ router.get('/register', (req,res)=>{
 })
 
 
-router.get('/404', (req,res)=>{
-  res.render('404')
-})
-
-// app.use((req, res, next) => {
-//   res.status(404).render('404', {
-//     titulo: "404",
-//     descripcion: 'Pagina no encontrada'
-//   })
-// });
-
 //ROUTER METODOS CONTROLLER
 router.post('/register', authController.register)
 router.post('/login', authController.login)
-
-
-// router.get("/", (req, res) => {
-//   res.render("404");
-// });
 
 
 module.exports = router;

@@ -35,12 +35,16 @@ dotenv.config({path: './env/.env'})
 // //trabajar con cookies
 app.use(cookieParser());
 
-app.use((req, res, next) => {
-  res.status(404).render('404', {
-    titulo: "404",
-    descripcion: 'Pagina no encontrada'
-  })
+app.use((req, res) => {
+  res.status(404).render('404');
 });
+
+// app.use((req, res, next) => {
+//   res.status(404).render('404', {
+//     titulo: "404",
+//     descripcion: 'Pagina no encontrada'
+//   })
+// });
 
 //Indicando el puerto de la app
 app.listen(3000, function () {

@@ -23,13 +23,7 @@ app.get("/api/v1/atractivos/categoria/:categoria", async (req, res) => {
   res.render("admin", { "atractivos": data })
 })
 
-//----Obtener listado----//
-// app.get("/listado", async (req, res) => {
-//     const resultados = await fetch(`http://localhost:4000/api/v1/listadoAtractivos`);
-//     const data = await resultados.json();
-//     console.log(data);
-//     res.render("listado", { "atractivos": data })
-//   })
+
 
 ////////////////////////////////////
 //------AGREGANDO ATRACTIVOS------//
