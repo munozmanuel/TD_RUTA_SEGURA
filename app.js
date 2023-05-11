@@ -35,6 +35,9 @@ dotenv.config({path: './env/.env'})
 // //trabajar con cookies
 app.use(cookieParser());
 
+// app.use((req, res) => {
+//   res.status(404).render('404');
+// });
 app.use((req, res) => {
   res.status(404).render('404');
 });

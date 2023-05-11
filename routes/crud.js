@@ -23,8 +23,6 @@ app.get("/api/v1/atractivos/categoria/:categoria", async (req, res) => {
   res.render("admin", { "atractivos": data })
 })
 
-
-
 ////////////////////////////////////
 //------AGREGANDO ATRACTIVOS------//
 ///////////////////////////////////
@@ -67,7 +65,6 @@ app.delete("/mantenedor/:atractivo_id", async (req, res) => {
   }
 });
 
-
 ///////////////////////////////////////
 //------MODIFICANDO ATRACTIVOS------//
 /////////////////////////////////////
@@ -97,9 +94,9 @@ app.get("/editor/:regiones_id", async (req, res) => {
   res.render("editor", { "atractivos": data })
 })
 
-///////////////////////////////////////////////
+/////////////////////////////////////////////////
 //----COUNT Atractivos - Mantenedor EDITOR----//
-/////////////////////////////////////////////
+///////////////////////////////////////////////
 app.get("/api/v1/atractivos/cantidad/:id_cat", async (req, res) => {
   const id_cat = req.params.id_cat;
   const resultados = await fetch(`http://localhost:4000/api/v1/atractivos/cantidad/${id_cat}`);
@@ -109,13 +106,30 @@ app.get("/api/v1/atractivos/cantidad/:id_cat", async (req, res) => {
   //  res.render("editor", { "atractivos": data })
 })
 
-// const respuesta = await fetch(`http://localhost:4000/api/v1/atractivos/cantidad/${id_cat}`);
-// const data = await respuesta.json();
-// const cantidadAtractivos = data[0].count;
-// const cantidadAtractivosElemento = document.getElementById("cantidad-atractivos");
-// cantidadAtractivosElemento.textContent = cantidadAtractivos;
+/////////////////////////////////////////////////
+//----GENERAR PDF----//
+///////////////////////////////////////////////
+// app.get("/listadoPdf", async (req, res) => {
+//   try {
+//     const resultados = await fetch(`http://localhost:4000/api/v1/listadoAtractivosPDF`);
+//     const data = await resultados.json();
 
+//     // Generar el PDF utilizando pdfkit
+//     const doc = new PDFDocument();
+//     doc.pipe(res); // Enviar el PDF como respuesta al cliente
 
+//     // Agregar contenido al PDF
+//     doc.text('Listado de Atractivos');
+//     doc.text('------------------------');
+//     // Aquí puedes agregar más contenido al PDF utilizando los datos obtenidos
+
+//     doc.end(); // Finalizar y enviar el PDF
+
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).send("Error al generar el PDF");
+//   }
+// });
 
 module.exports = app;
 

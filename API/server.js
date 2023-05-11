@@ -6,6 +6,11 @@ const app = express();
 const { Pool } = pg;
 const pool = require('../database/db');
 
+const PDFDocument = require('pdfkit');
+const fs = require('fs');
+
+
+
 const methodOverride = require('method-override');
 
 app.use(express.json());
@@ -109,5 +114,85 @@ app.get("/api/v1/atractivos/cantidad/count", async (req, res) => {
   const resultado = await pool.query("SELECT COUNT(atractivo_id) FROM atractivos");
   res.json(resultado.rows)
 });
+
+
+
+///////////////////////////////////////
+//--------GENERAR PDF-------//
+/////////////////////////////////////
+// Generar PDF de listado de atractivos
+// app.get("/api/v1/listadoAtractivosPdf", async (req, res) => {
+//   try {
+//     const resultado = await pool.query("SELECT atractivos.atractivo_id, atractivos.nombre, atractivos.imgurl, atractivos.descripcion, atractivos.categorias_id, atractivos.regiones_id FROM atractivos");
+
+//     // Crear un documento PDF
+//     const doc = new PDFDocument();
+
+//     // Establecer el encabezado Content-Disposition para que el navegador descargue el PDF en lugar de mostrarlo en el navegador
+//     res.setHeader('Content-Disposition', 'attachment; filename="listadoAtractivos.pdf"');
+//     // Establecer el tipo de contenido de la respuesta como application/pdf
+//     res.setHeader('Content-Type', 'application/pdf');
+//     // Crear un stream de respuesta para el PDF generado
+//     doc.pipe(res);
+
+//     // Generar el contenido del PDF a partir de los resultados de la consulta
+//     doc.font('./public/src/fonts/Almarai-Regular.ttf').fontSize(14);
+//     doc.text('Listado de Atractivos', { align: 'center' });
+//     doc.moveDown();
+
+//     // Crear la tabla de datos
+//     const table = {
+//       headers: ['ID', 'Nombre', 'Imagen', 'Descripción', 'Categoría ID', 'Región ID'],
+//       rows: []
+//     };
+
+//     resultado.rows.forEach((atractivo) => {
+//       table.rows.push([
+//         atractivo.atractivo_id.toString(),
+//         atractivo.nombre,
+//         atractivo.imgurl,
+//         atractivo.descripcion,
+//         atractivo.categorias_id.toString(),
+//         atractivo.regiones_id.toString()
+//       ]);
+//     });
+
+//     // Definir los estilos de la tabla
+//     const tableStyle = {
+//       cellPadding: 10,
+//       fontSize: 12,
+//       lineHeight: 1.5
+//     };
+
+//     // Calcular el ancho de columna máximo para ajustar el ancho de la tabla
+//     const columnWidth = 540 / table.headers.length;
+
+//     // Dibujar la tabla de datos
+//     let y = doc.y;
+//     doc.font('./public/src/fonts/Almarai-Bold.ttf');
+//     doc.text(table.headers.join(' | '), { y });
+//     doc.moveDown();
+//     doc.font('./public/src/fonts/Almarai-Regular.ttf');
+
+//     table.rows.forEach((row) => {
+//       y = doc.y;
+//       row.forEach((cell, index) => {
+//         doc.text(cell, { width: columnWidth, align: 'left', continued: index !== row.length - 1 });
+//       });
+//       doc.moveDown();
+//     });
+
+//     // Finalizar el PDF
+//     doc.end();
+//   } catch (error) {
+//     console.error;
+//     res.status(500).json({ error: 'Error al generar el PDF' });
+//   }
+// });
+
+
+
+
+
 
 
