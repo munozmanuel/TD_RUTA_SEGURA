@@ -55,16 +55,23 @@
     margin: 0px auto;
     display: flex;
     flex-direction: column;
+    min-width: 400px;
+    min-height: 400px;
     max-width: 400px;
-    max-height: 300px;
     line-height: 0px;
+    box-shadow: 8px 8px 10px var(--ruta_White);
 }
  #error404{
     font-size: 150px !important;
     color: var(--ruta_DarkRed);
  }
+ #linkVolver{
+    margin-top: 100px;
+
+ }
 
 .mensaje404 :nth-child(n){
+    line-height: 0px !important;
     font-size: 30px !important;
     justify-content: center;
     align-items: center;
@@ -72,6 +79,7 @@
     flex-direction: column;
     color: var(--ruta_DarkRed);
 }
+
 
 .botonLogin {
     border: 2px solid var(--ruta_Red);
