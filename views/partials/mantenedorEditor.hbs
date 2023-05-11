@@ -1,8 +1,9 @@
 <div class="selectRegiones">
     <div class="separadorEditor"></div>
-                <div class="tituloEditor">
-                <h1>Editar</h1>
-            </div>
+    <div class="tituloEditor">
+        <h1>Editar</h1>
+        <a href="/listado"><h2>Ir al listado total</h2></a>
+    </div>
     <select class="selectOpciones" name="forma" onchange="location = this.value;">
         <option value="">Selecciona Region a mostrar</option>
         <option value="/editor/16">Arica y Parinacota</option>
@@ -22,7 +23,6 @@
         <option value="/editor/14">Magallanes</option>
         <option value="/editor/15">Metropolitana</option>
     </select>
-  <p>La cantidad de atractivos es: <span>{{count}}</span></p>
 
     <div id="mantenedorEditor">
         <div class="muestraEditor">

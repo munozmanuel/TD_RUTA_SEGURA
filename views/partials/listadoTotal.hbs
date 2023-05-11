@@ -1,0 +1,40 @@
+<div class="selectRegiones">
+    <div class="separadorEditor"></div>
+    <div class="tituloEditor">
+        <h1>Listado Total </h1>
+        <h3>Existen <span class="cifraCount">{{count}} </span> atractivos en la base de datos</h3>
+    </div>
+
+    <div class="containerTabla">
+        {{#each atractivos}}
+        <table class="table tablaListado">
+            <thead>
+                <tr>
+                    <th scope="col">#ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">URL</th>
+                    <th scope="col">Descripcion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" class="idAtractivo">{{this.atractivo_id}}</th>
+                    <td >{{this.nombre}}</td>
+                    <td class="truncate-cell"><a href="{{this.imgurl}}" target="_blank">{{this.imgurl}}</a></td>
+                    <td class="truncate-cell">{{this.descripcion}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        {{/each}}
+
+    </div>
+<style>
+        .tituloEditor{
+            font-size: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+    </style>

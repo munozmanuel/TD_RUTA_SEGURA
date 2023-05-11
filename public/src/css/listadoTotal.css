@@ -1,0 +1,32 @@
+
+        .idAtractivo{
+            font-size: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        .containerTabla {
+            padding: 50px !important;
+        }
+
+        .tablaListado {
+            table-layout: fixed;
+        }
+        .tablaListado th {
+            background-color: rgb(215, 215, 215)
+            ;
+        }
+
+        .tablaListado td {
+            width: auto;
+            /* o establece un valor específico, como "width: 150px" */
+            padding: 8px;
+            /* ajusta el valor del padding según tus necesidades */
+        }
+
+        .truncate-cell {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px;
+            /* ajusta este valor según tus necesidades */
+        }

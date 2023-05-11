@@ -47,6 +47,12 @@ app.get("/api/v1/atractivos/categoria/:id_cat", async (req, res) => {
     res.json(resultado.rows)
   });
 
+//----Obtener Listado Total----//
+app.get("/api/v1/listadoAtractivos", async (req, res) => {
+    const resultado = await pool.query("SELECT atractivos.atractivo_id, atractivos.nombre, atractivos.imgurl, atractivos.descripcion, atractivos.categorias_id, atractivos.regiones_id FROM atractivos");
+    res.json(resultado.rows)
+  });
+
 ////////////////////////////////////
 //------AGREGANDO ATRACTIVOS------//
 ///////////////////////////////////
@@ -98,15 +104,10 @@ app.put("/api/v1/atractivos/editar/:atractivo_id", async (req, res) => {
 //--------CONTANDO ATRACTIVOS-------//
 /////////////////////////////////////
 
-app.get("/api/v1/atractivos/cantidad/1", async (req, res) => {
-  // const id_cat = req.params.id_cat
-  const resultado = await pool.query("SELECT COUNT(atractivo_id) AS totalAtractivos FROM atractivos WHERE categorias_id=1 GROUP BY categorias_id");
+
+app.get("/api/v1/atractivos/cantidad/count", async (req, res) => {
+  const resultado = await pool.query("SELECT COUNT(atractivo_id) FROM atractivos");
   res.json(resultado.rows)
 });
-// app.get("/api/v1/atractivos/cantidad/:id_cat", async (req, res) => {
-//   const id_cat = req.params.id_cat
-//   const resultado = await pool.query("SELECT COUNT(atractivo_id) FROM atractivos inner join categorias on categorias.id_cat = atractivos.categorias_id where id_cat=$1;", [id_cat]);
-//   res.json(resultado.rows)
-// });
 
 

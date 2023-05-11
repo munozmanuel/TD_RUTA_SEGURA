@@ -1,0 +1,34 @@
+<div class="selectRegiones">
+    <div class="separadorEditor"></div>
+    <div class="tituloEditor">
+        <h1>Listado Total</h1>
+        <h2>Atractivos</h2>
+            <p>La cantidad Total de atractivos en la base de datos es: <span>{{count}}</span></p>
+    </div>
+
+
+    <div id="mantenedorEditor">
+        <div class="muestraEditor">
+
+            {{#each atractivos}}
+            <div id="lugar">
+                <img id="mantenedorImg" src="{{this.imgurl}}" width="100px">
+                <div class="iconosDeletEdit">
+                    <a href="/edit/{{this.atractivo_id}}" data-bs-toggle="modal"
+                        data-bs-target="#editModal{{this.atractivo_id}}"> <span
+                            class="material-symbols-outlined">edit</span></a>
+                    
+                    <div id="confirmacion" class="popup">
+                        <h3>¿Está seguro de que desea eliminar este elemento?</h3>
+                        <button id="confirmar">Aceptar</button>
+                        <button id="cancelar">Cancelar</button>
+                    </div>           
+                </div>
+                <p id="mantenedorId">ID: {{this.atractivo_id}}</p>
+                <h2 id="mantenedorNombre">{{this.nombre}}</h2>
+                <p id="mantenedorDescripcion">{{this.descripcion}}</p>
+            </div>
+            {{/each}}
+
+        </div>
+    </div>

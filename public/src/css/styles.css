@@ -447,7 +447,36 @@ label {
     background-color: var(--ruta_White);
 }
 
+.tituloEditor  {
+display: flex;
+flex-direction: column;
+}
+.cifraCount{
+    color: red;
+    font-size: 30px;
+    font-family: alm_bold;
+    font-weight: bolder;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+.tituloEditor h3{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: alm_bold;
+    font-weight: bolder;
+}
 .tituloEditor h1 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: alm_bold;
+    font-weight: bolder;
+}
+.tituloEditor h2 {
+    font-size: 15px;
+    color: red;
     margin-top: 15px;
     margin-bottom: 15px;
     text-align: center;
