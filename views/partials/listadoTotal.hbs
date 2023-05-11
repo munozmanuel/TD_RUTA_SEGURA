@@ -18,9 +18,10 @@
             </thead>
             <tbody>
                 <tr>
+                    {{!-- <td class="truncate-cell"><a href="{{this.imgurl}}" target="_blank">{{this.imgurl}}</a></td> --}}
                     <th scope="row" class="idAtractivo">{{this.atractivo_id}}</th>
                     <td >{{this.nombre}}</td>
-                    <td class="truncate-cell"><a href="{{this.imgurl}}" target="_blank">{{this.imgurl}}</a></td>
+                    <td class="truncate-cell"><a href="{{this.imgurl}}" target="_blank"><img src="{{this.imgurl}}" alt="" width="50px"></a>{{this.imgurl}}</td>
                     <td class="truncate-cell">{{this.descripcion}}</td>
                 </tr>
             </tbody>
