@@ -8,7 +8,6 @@ function muestraPosicion(pos){
   let longitud = pos.coords.longitude.toFixed(2);
   console.log(`la latitud es ${latitud}`);
   console.log(`la longitud es ${longitud}`);
-  // document.write(latitud);
   lati.innerHTML = latitud;
   longi.innerHTML = longitud;
 

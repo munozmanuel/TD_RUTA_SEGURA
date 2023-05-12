@@ -22,9 +22,7 @@
 
         <div class="ingreso">
             <form id="formul" action="/mantenedor" method="POST">
-                {{!-- <label for="regiones_id">Id Region</label>
-                <input id="regiones_id" name="regiones_id" placeholder="Identificador ID" required> --}}
-                <h1 class="agregarAtractivos">Agregar Atractivos</h1>
+                 <h1 class="agregarAtractivos">Agregar Atractivos</h1>
                 <label for="Región">Selecciona Region a modificar</label>
                 <select id="regiones_id" name="regiones_id" required>
                     <option value="16">Arica y Parinacota </option>
@@ -87,10 +85,6 @@
 
                 <img id="mantenedorImg" src="{{this.imgurl}}" width="100px">
                 <div class="iconosDeletEdit">
-                    {{!-- <a href="/mantenedor/{{this.atractivo_id}}?_method=DELETE"><span
-                            class="material-symbols-outlined">
-                            delete
-                        </span></a> --}}
                     <a href="/mantenedor/{{this.atractivo_id}}?_method=DELETE"
                         onclick="return confirm('¿Estás seguro de eliminar este elemento?. Esta acción no se puede deshacer')">
                         <span class="material-symbols-outlined">delete</span>
@@ -176,24 +170,14 @@
                     </script>
 
 
-
                 </div>
                 <p id="mantenedorId">ID: {{this.atractivo_id}}</p>
                 <h2 id="mantenedorNombre">{{this.nombre}}</h2>
                 <p id="mantenedorDescripcion">{{this.descripcion}}</p>
                  <p id="mantenedorCategoriaId">{{this.categorias_id}}</p> 
 
-                {{!-- <form action="/mantenedor/{{this.atractivo_id}}?_method=DELETE" method="POST">
-                    <input type="hidden" name="_method" value="DELETE">
-                    <button type="submit" id="botonEliminar">Eliminar</button>
-                </form> --}}
-
-
             </div>
             {{/each}}
-
-            {{!--
-            </table> --}}
 
         </div>
     </div>

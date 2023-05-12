@@ -50,8 +50,6 @@ npm i express pg hbs nodemon body-parser cors bcryptjs cookie-parser dotenv expr
 ## Base de datos / Postgres
 La información correspondiente a la base de datos se encuentra en la carpeta **bdScripts** que contiene los scripts necesarios para la creación de bbdd, tablas y población de tablas con datos básicos. 
 
-
-
 # Rúbrica de evaluación: 
 
 #### Consultas base de datos
@@ -69,7 +67,8 @@ La información correspondiente a la base de datos se encuentra en la carpeta **
 #### Página Web 
 - Uso de tags html:
     - /views/ 
-- Utilizacion de Framework css: 
+- Utilizacion de Framework css:
+    - /public/src/css/
     - Bootstrap para la creación de navbar, footer, botones, entre otros.
 - Responsividad: 
     - /views/index.hbs
@@ -80,7 +79,7 @@ La información correspondiente a la base de datos se encuentra en la carpeta **
     
 #### Servicios
 - Creacion de servicio REST: 
-    - PORTAFOLIO-TALENTO-DIGITAL-API: /routes/routes.js
+    - /routes/routes.js
 
 - Servicio de usuarios:
     - /views/login.hbs
@@ -94,6 +93,26 @@ La información correspondiente a la base de datos se encuentra en la carpeta **
     - /routes/crud.js
 
 #### Lenguaje Node
+- Inclusión de paquetes y librerías de usuario: 
+    - /package.json
+
+- Agrupación del código y separación por funcionalidad:
+    - /routes/crud.js para agrupar funcionalidades de mantenedor.
+    - carpeta /controllers que agrupa funcionalidad para listar,
+      autorizar y creación de archivo Pdf. 
+
+- Utilización de funciones asíncronas:
+    - Carpeta /controllers
+    - Carpeta /routes
+
+- Lectura de parámetros de entrada:
+    - /routes/crud.js *línea 28*  <->  /views/partials/mantenedor.hbs *línea 23*
+
+#### Manipulación de archivos
+- Creación y descarga automatica de PDF a partir de información de BD.
+    - Uso de dependencia 'pdfKit'
+    - /views/partials/listadoTotal.hbs -> Botón 'Crear pdf'
+    - /controllers/pdfController.js
 
 
 
