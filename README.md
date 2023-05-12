@@ -13,31 +13,13 @@ La función del mantenedor es crear, editar o eliminar los atractivos, que poste
 ![image](https://github.com/munozmanuel/TD_RUTA_SEGURA/blob/master/public/imgs/assets/loginMantenedor.jpg)
 
 
-
-
-
-
-
-
-
 ### Tecnologías utilizadas:
 Javascript, Html, Css, Postgres, Express, NodeJs
 
-
-
-
 ## Estructura general del proyecto
 Para fines prácticos, se decidió dejar la aplicación y api dentro del mismo proyecto. En **API/server.js** se incluye tanto la configuración como las peticiones a la base de datos.
-En  **routes** se encuentran tanto las rutas básicas, como las rutas para CRUD.
+En **routes** se encuentran tanto las rutas básicas, como las rutas para CRUD.
 
-### Api estará escuchando en puerto 4000
-```bash
-  nodemon api/server.js
-```
-### APP estará escuchando en puerto 3000
-```bash
-  nodemon app.js
-```
 ## Clonar repositorio
 ```bash
   git clone https://github.com/munozmanuel/TD_RUTA_SEGURA.git
@@ -49,7 +31,17 @@ npm i express pg hbs nodemon body-parser cors bcryptjs cookie-parser dotenv expr
 ```
 
 ## Base de datos / Postgres
-La información correspondiente a la base de datos se encuentra en la carpeta **bdScripts** que contiene los scripts necesarios para la creación de bbdd, tablas y población de tablas con datos básicos. 
+La información correspondiente a la base de datos se encuentra en la carpeta **bdScripts** que contiene los scripts necesarios para la creación de bbdd, tablas y población de tablas con datos genéricos. 
+
+
+### Api estará escuchando en puerto 4000
+```bash
+  nodemon api/server.js
+```
+### APP estará escuchando en puerto 3000
+```bash
+  nodemon app.js
+```
 
 # Rúbrica de evaluación: 
 
@@ -114,39 +106,3 @@ La información correspondiente a la base de datos se encuentra en la carpeta **
     - Uso de dependencia 'pdfKit'
     - /views/partials/listadoTotal.hbs -> Botón 'Crear pdf'
     - /controllers/pdfController.js
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## RutaSegura.
-
-Aplicación que entrega información relevante sobre estados de las ruta, combustibles, clima, etc.
-
-#### Ubicación
-La aplicación usa la ubicación entregada por el navegador y la pasa a una api de clima que entrega el clima en tiempo real.
-
-#### Distancias / Consumo
-En el header es posible seleccionar una región de origen y destino. Cada región contiene coordenadas pre-definidas que al ser seleccionadas y hacer click al botón "vamos",  muestra un modal con información interesante, como la distancia total, tiempo estimado para automovil/bus/camión, además del consumo de combustibles.
-
-#### Usuarios
-Los usuarios podrán contar con una ventana de login, que les permite reportar incidentes en la ruta (estado del camino, accidentes, etc). Estos mensajes aparecen junto a la información de clima como cajas de comentarios, con el nombre del usuario, región, y el reporte.
-
-##### Tecnologías
-Se utilizó Html, Css/Bootstrap y Javascript.
-Para animaciónes se utilizará https://lottiefiles.com/ . Un formato basado en archivos JSON que permite importar animaciones a un muy bajo peso, renderizadas previamente desde softwares como After Effects.
