@@ -45,12 +45,12 @@ app.get("/api/v1/atractivos/categoria/:id_cat", async (req, res) => {
     res.json(resultado.rows)
   });
 
-// Obtener Listado Total para mostrar en la vista de 'Listado Total' ----//
+// Obtener Listado Total para mostrar en la vista de 'Listado Total' 
+
 app.get("/api/v1/listadoAtractivos", async (req, res) => {
     const resultado = await pool.query("SELECT atractivos.atractivo_id, atractivos.nombre, atractivos.imgurl, atractivos.descripcion, atractivos.categorias_id, atractivos.regiones_id FROM atractivos INNER JOIN categorias ON atractivos.categorias_id = categorias.id_cat WHERE categorias.id_cat = atractivos.categorias_id ORDER BY atractivo_id desc ");
     res.json(resultado.rows)
   });
-
 
 // AGREGANDO ATRACTIVOS
 
@@ -66,7 +66,6 @@ app.post("/api/v1/atractivos/agregar", async (req, res) => {
     res.status(500).json({ message: "Ocurrió un error al agregar el registro" });
   }
 });
-
 
 // ELIMINANDO ATRACTIVOS
 
@@ -84,7 +83,6 @@ app.delete("/api/v1/atractivos/:atractivo_id", async (req, res) => {
   }
 });
 
-
 // MODIFICANDO ATRACTIVOS
 
 app.put("/api/v1/atractivos/editar/:atractivo_id", async (req, res) => {
@@ -100,6 +98,5 @@ app.put("/api/v1/atractivos/editar/:atractivo_id", async (req, res) => {
 
 app.get("/api/v1/atractivos/cantidad/count", async (req, res) => {
   const resultado = await pool.query("SELECT COUNT(atractivo_id) FROM atractivos");
-
   res.json(resultado.rows)
 });
