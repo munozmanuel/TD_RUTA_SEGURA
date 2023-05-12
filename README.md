@@ -11,9 +11,8 @@ El login solo está funcionando como redireccionador a la vista de **Admin** (*c
 La función del mantenedor es crear, editar o eliminar los atractivos, que posteriormente se estarán mostrando en el index según la región de destino que se elija.
 
 ##### **Haga click en la siguiente imagen para ver un demo en video** (en caso de no ver link, revisar carpeta /demo)
-<div align="center">
+
 [<img src="https://github.com/munozmanuel/TD_RUTA_SEGURA/blob/master/demo/posterframe.jpg" width="50%" align="center">](https://www.youtube.com/watch?v=eRSMLwFr31U "demostración")
-</div>
 
 ##### **En caso de no visualizar la siguiente infografía, buscar en: /public/imgs/assets/loginMantenedor.jpg**
 
