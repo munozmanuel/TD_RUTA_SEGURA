@@ -8,10 +8,9 @@ Al elegir una región de origen y una de destino, se pasan coordenadas una api q
 
 ### Login / Mantenedor
 El login solo está funcionando como redireccionador a la vista de **Admin** (*cuando el usuario es 'admin'*) o a la vista de **Editor** cuando quien ingresa tiene cualquier nombre de usuario diferente a 'admin". Todo esto manejado por lógica condicional.
+La función del mantenedor es crear, editar o eliminar los atractivos, que posteriormente se estarán mostrando en el index según la región de destino que se elija.
+![image](https://github.com/munozmanuel/TD_RUTA_SEGURA/assets/108648624/df340d59-7f3a-42dd-a596-1461680aea9e)
 
-En la vista de ***Admin*** se cuenta con selectores para mostrar los atractivos por región:
-
-A la izquierda del mantenedor están todas las opciones para agregar un atractivo. Por otro lado, existen filtros que muestran el total de atractivos según la categoría que se selecciona.
 
 
 
