@@ -57,6 +57,28 @@ La información correspondiente a la base de datos se encuentra en la carpeta **
 - Uso de cláusulas de agrupación de información para obtener datos agregados:
     - API/server.js línea 100
 
+#### Algorítmo de cálculo y manipulación de archivos de texto
+- Uso general del lenguaje, sintáxis, selección de tipos de dato,
+  sentencias lógicas, expresiones, operaciones y comparaciones:
+    - /routes/crud.js
+    - /routes/routes.js
+    - /controllers/authController.js 
+    - /controllers/listadoController.js 
+- Uso de sentencias repetitivas:
+    - /public/src/js/regiones.js 
+- Convenciones y estilos de programación:
+    - /public/src/js
+    - /controllers
+    - /routes
+- Utilización correcta de estructuras de datos:
+    - /routes/routes.js
+    - /controllers/listadoController.js 
+- Manipulación de archivos: 
+    - Creación y descarga automatica de PDF a coninformación de BD.
+    - Uso de dependencia 'pdfKit'
+    - /views/partials/listadoTotal.hbs -> Botón 'Crear pdf'
+    - /controllers/pdfController.js
+
 #### Página Web 
 - Uso de tags html:
     - /views/ 
@@ -101,8 +123,3 @@ La información correspondiente a la base de datos se encuentra en la carpeta **
 - Lectura de parámetros de entrada:
     - /routes/crud.js *línea 28*  <->  /views/partials/mantenedor.hbs *línea 23*
 
-#### Manipulación de archivos
-- Creación y descarga automatica de PDF a partir de información de BD.
-    - Uso de dependencia 'pdfKit'
-    - /views/partials/listadoTotal.hbs -> Botón 'Crear pdf'
-    - /controllers/pdfController.js
