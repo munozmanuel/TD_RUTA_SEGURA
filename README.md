@@ -50,34 +50,29 @@ npm i express pg hbs nodemon body-parser cors bcryptjs cookie-parser dotenv expr
 ## Base de datos / Postgres
 La información correspondiente a la base de datos se encuentra en la carpeta **bdScripts** que contiene los scripts necesarios para la creación de bbdd, tablas y población de tablas con datos básicos. 
 
-Correr proyecto
-```bash
-  npm run dev 
-```
-## Screenshots
 
 
-## Rúbrica de evaluación: 
-Links para poder evaluar de mejor manera:
+# Rúbrica de evaluación: 
+
 #### Consultas base de datos
 - Selección de columnas requeridas para presentar la información solicitada:
-    API/server.js línea 35
+    - API/server.js línea 35
 - Uso de JOIN para relacionar la información de distintas tablas: 
-    API/server.js línea 51
+    - API/server.js línea 51
 - Uso de WHERE para filtrar la información requerida: 
-    API/server.js línea 91
+    - API/server.js línea 91
 - Uso de cláusulas de ordenamiento para presentar la información: 
-    API/server.js línea 51
+    - API/server.js línea 51
 - Uso de cláusulas de agrupación de información para obtener datos agregados:
-    API/server.js línea 100
+    - API/server.js línea 100
 
 #### Página Web 
 - Uso de tags html:
-    /views/ 
+    - /views/ 
 - Utilizacion de Framework css: 
-    Bootstrap para la creación de navbar, footer, botones, entre otros.
+    - Bootstrap para la creación de navbar, footer, botones, entre otros.
 - Responsividad: 
-    /views/index.hbs
+    - /views/index.hbs
 - Template y componentes: 
     - /views/partials/plantilla.hbs
     - /views/partials/navbar.hbs 
