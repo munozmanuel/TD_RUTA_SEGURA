@@ -3,9 +3,10 @@
     <div class="tituloEditor">
         <h1>Listado Total </h1>
         <h3>Existen <span class="cifraCount">{{count}} </span> atractivos en la base de datos</h3>
+        <a href="/generarPdf"><p id="crearPdf"> Crear pdf </p></a>
     </div>
 
-<a href="/generarPdf">Crear pdf</a>
+
     <div class="containerTabla">
         {{#each atractivos}}
         <table class="table tablaListado">

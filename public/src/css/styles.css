@@ -28,6 +28,12 @@
 
 }
 
+    a {
+        text-decoration: none;
+        color: black;
+      }
+
+
 @font-face {
     font-family: "alm_Light";
     src: url(../fonts/Almarai-Light.ttf) format("truetype");
@@ -89,8 +95,45 @@
     padding-left: 15px;
     padding-right: 15px;
     background-color: var(--ruta_Gray) !important;
-    
 }
+
+#crearPdf{
+    border: 1px solid var(--ruta_LightGray);
+    font-family: alm_bold;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    background-color: var(--ruta_White);
+    color: var(--ruta_DarkRed);
+    text-decoration: none;
+}
+#crearPdf:hover{
+    text-decoration: none;
+    border: 1px solid var(--ruta_Gray);
+    font-family: alm_bold;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    background-color: var(--ruta_DarkRed);
+    color: var(--ruta_White);
+    transition: all .5s;
+}
+#crearPdf:visited{
+    text-decoration: none;
+    border: 1px solid var(--ruta_Gray);
+    font-family: alm_bold;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    background-color: var(--ruta_DarkRed);
+    color: var(--ruta_White);
+    transition: all .5s;
+}
+
+
 
 .botonLogin:hover {
     border: 2px solid var(--ruta_Red);

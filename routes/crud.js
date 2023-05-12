@@ -2,7 +2,6 @@ const express = require('express');
 const router = require('./routes');
 const app = express.Router()
 
-
 ///////////////////////////////////////////////
 //----OBTENIENDO ATRACTIVOS SEGÚN REGION----//
 /////////////////////////////////////////////
@@ -103,33 +102,8 @@ app.get("/api/v1/atractivos/cantidad/:id_cat", async (req, res) => {
   const data = await resultados.json();
    console.log(data);
    res.render("editor", { count: data.count });
-  //  res.render("editor", { "atractivos": data })
+
 })
-
-/////////////////////////////////////////////////
-//----GENERAR PDF----//
-///////////////////////////////////////////////
-// app.get("/listadoPdf", async (req, res) => {
-//   try {
-//     const resultados = await fetch(`http://localhost:4000/api/v1/listadoAtractivosPDF`);
-//     const data = await resultados.json();
-
-//     // Generar el PDF utilizando pdfkit
-//     const doc = new PDFDocument();
-//     doc.pipe(res); // Enviar el PDF como respuesta al cliente
-
-//     // Agregar contenido al PDF
-//     doc.text('Listado de Atractivos');
-//     doc.text('------------------------');
-//     // Aquí puedes agregar más contenido al PDF utilizando los datos obtenidos
-
-//     doc.end(); // Finalizar y enviar el PDF
-
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).send("Error al generar el PDF");
-//   }
-// });
 
 module.exports = app;
 

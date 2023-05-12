@@ -3,10 +3,9 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
 const app = express();
-const Handlebars = require("handlebars");
+// const Handlebars = require("handlebars");
 const hbs = require('hbs');
 const methodOverride = require('method-override');
-
 
 // app.use(methodOverride('_method'));
 app.use(methodOverride("_method", { methods: ["GET", "POST"] }));
@@ -32,29 +31,14 @@ hbs.registerPartials(__dirname + "/views/partials");
 // Variables de entorno
 dotenv.config({path: './env/.env'})
 
-// //trabajar con cookies
+//trabajar con cookies
 app.use(cookieParser());
 
-// app.use((req, res) => {
-//   res.status(404).render('404');
-// });
 app.use((req, res) => {
   res.status(404).render('404');
 });
-
-// app.use((req, res, next) => {
-//   res.status(404).render('404', {
-//     titulo: "404",
-//     descripcion: 'Pagina no encontrada'
-//   })
-// });
 
 //Indicando el puerto de la app
 app.listen(3000, function () {
   console.log("Escuchando en puerto 3000")
 });
-
-
-
-
-
