@@ -41,7 +41,7 @@ exports.login = async (req, res) => {
         const usuario = req.body.usuario
         const pass = req.body.pass
         console.log(usuario + "-" + pass);
-            if (!usuario || !pass) {
+        if (!usuario || !pass) {
             console.log("-ERR----No se han ingresado datos o falta alguno------")
             res.render('login', {
                 alert: true,
@@ -68,16 +68,15 @@ exports.login = async (req, res) => {
                     })
                     console.log("IF");
                 } else {
-                    //inicio sesion ok
-                    // const id = results[0].id
+
                     console.log("ELSE");
                     const id = results.rows[0].id
+                    const usuario = results.rows[0].usuario
                     console.log(id);
                     const token = jwt.sign({ id: id }, process.env.JWT_SECRETO, {
                         expiresIn: process.env.JWT_TIEMPO_EXPIRA
                     })
-                    //sin tiempo de expiracion
-                    //const token = jwt.sign({id:id}, process.env.JWT_SECRETO)
+
                     console.log("TOKEN: " + token + "para el usuario:" + usuario)
 
                     const cookiesOptions = {
@@ -85,8 +84,9 @@ exports.login = async (req, res) => {
                         httpOnly: true
                     }
                     res.cookie('jwt', token, cookiesOptions)
-                    if (id == 13) {
-                        console.log('MMUNOZ INGRESADO');
+                    if (usuario == 'admin') {
+                        console.log('admin HA INGRESADO - Redireccionando a vista /Admin');
+                        console.log(results.rows);
                         res.render('admin', {
                             alert: true,
                             alertTitle: "Conexion Exitosa",
@@ -98,7 +98,7 @@ exports.login = async (req, res) => {
                         })
                     }
                     else {
-                        console.log('USUARIO NORMAL');
+                        console.log('Usuario normal');
                         res.render('editor', {
                             alert: true,
                             alertTitle: "Conexion Exitosa",
