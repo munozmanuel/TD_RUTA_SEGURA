@@ -1,14 +1,14 @@
 <div class="selectRegiones">
     <div class="separadorEditor"></div>
     <div class="tituloEditor">
-        <h1>Listado Total </h1>
-        <h3>Existen <span class="cifraCount">{{count}} </span> atractivos en la base de datos</h3>
+        <h1>Listado Con ultimas 10 entradas a base de datos.</h1>
+        <h3>Existen <span class="cifraCount">{{count}} </span> atractivos en total en la BD.</h3>
         <a href="/generarPdf"><p id="crearPdf"> Crear pdf </p></a>
     </div>
 
 
     <div class="containerTabla">
-        {{#each atractivos}}
+        {{#each (limit atractivos 10) }}
         <table class="table tablaListado">
             <thead>
                 <tr>

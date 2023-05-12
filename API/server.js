@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 //Sirviendo carpeta publica
 app.use(express.static(__dirname + '/public'));
 
+
 //Inicializando Server en puerto 4000
 app.listen(4000, () => {
   console.log("Escuchando en el 4000");
@@ -32,7 +33,7 @@ app.get("/api/v1/atractivos/:regiones_id", async (req, res) => {
     console.log(typeof regiones_id);
     res.json({mensaje: 'Obteniendo Atractivos'})
       } else {
-    const resultado = await pool.query("SELECT atractivos.atractivo_id, atractivos.nombre, atractivos.imgurl, atractivos.descripcion, atractivos.categorias_id, regiones_id from atractivos INNER JOIN regiones ON atractivos.regiones_id = regiones.id where regiones.id = $1 ORDER BY atractivos.atractivo_id desc", [regiones_id]);
+    const resultado = await pool.query("SELECT atractivos.atractivo_id, atractivos.nombre, atractivos.imgurl, atractivos.descripcion, atractivos.categorias_id, regiones_id from atractivos INNER JOIN regiones ON atractivos.regiones_id = regiones.id where regiones.id = $1 ORDER BY atractivos.atractivo_id desc LIMIT 10", [regiones_id]);
     res.json(resultado.rows)
   }
 });

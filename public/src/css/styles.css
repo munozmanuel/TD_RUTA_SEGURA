@@ -930,18 +930,28 @@ label {
     position: relative;
 }
 
-.contenedorDistancia,
-.contenedorDuracion :nth-child(n) {
-    color: var(--ruta_White);
-}
 
-#iconoDistancia {
-    max-width: 30px;
-    max-height: 30px;
+.laDistanciaEsDe{
+    text-align: center;
+    font-family: alm_bold;
+    font-size: 16px;
+    color:var(--ruta_White)
 }
-
+.laDuracionEsDe{
+    text-align: center;
+    font-family: alm_bold;
+    font-size: 16px;
+    color:var(--ruta_White)
+}
 .contenedorDistancia {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contenedorDuracion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .cifraDistancia,
@@ -951,15 +961,20 @@ label {
     text-indent: 60px;
 }
 
+.texto{
+    min-width: 350px;
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid var(--ruta_LightGray);
+}
 .tituloComentario {
-    font-family: alm_light;
-    font-size: 12px;
-    text-indent: 60px;
+    font-family: alm_bold;
+    text-transform: uppercase;
+    font-size: 30px;
     font-weight: 800;
 }
 
 .cifraDuracion .botonvamos {
-
     border-radius: 2px !important;
     font-family: alm_bold;
     width: 300px !important;

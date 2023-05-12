@@ -18,6 +18,17 @@ app.use(bodyParser.json());
 app.use('/', require('./routes/routes'));
 app.use('/', require('./routes/crud'));
 
+//Helper limitador
+// Registra un helper llamado "limit"
+hbs.registerHelper('limit', function(arr, limit) {
+  if (!Array.isArray(arr)) {
+    return [];
+  }
+
+  // Devuelve una copia limitada del arreglo
+  return arr.slice(0, limit);
+});
+
 //Sirviendo carpeta publica
 app.use(express.static(__dirname + '/public'));
 app.use(express.static("public"));
