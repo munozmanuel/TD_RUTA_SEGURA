@@ -2,9 +2,9 @@ const express = require('express');
 const router = require('./routes');
 const app = express.Router()
 
-///////////////////////////////////////////////
-//----OBTENIENDO ATRACTIVOS SEGÚN REGION----//
-/////////////////////////////////////////////
+
+// OBTENIENDO ATRACTIVOS SEGÚN REGION
+
 app.get("/region/:regiones_id", async (req, res) => {
   const regiones_id = req.params.regiones_id;
   const resultados = await fetch(`http://localhost:4000/api/v1/atractivos/${regiones_id}`);
@@ -13,7 +13,7 @@ app.get("/region/:regiones_id", async (req, res) => {
   res.render("admin", { "atractivos": data })
 })
 
-//----Obtener atractivos por categoría----//
+// Obtener atractivos por categoría
 app.get("/api/v1/atractivos/categoria/:categoria", async (req, res) => {
   const categoria = req.params.categoria;
   const resultados = await fetch(`http://localhost:4000/api/v1/atractivos/categoria/${categoria}`);
@@ -22,9 +22,9 @@ app.get("/api/v1/atractivos/categoria/:categoria", async (req, res) => {
   res.render("admin", { "atractivos": data })
 })
 
-////////////////////////////////////
-//------AGREGANDO ATRACTIVOS------//
-///////////////////////////////////
+
+// AGREGANDO ATRACTIVOS
+
 app.post("/mantenedor", async (req, res) => {
   try {
     const { nombre, descripcion, imgurl, regiones_id, categorias_id } = req.body;
@@ -44,9 +44,9 @@ app.post("/mantenedor", async (req, res) => {
   }
 });
 
-//////////////////////////////////////
-//------ELIMINANDO ATRACTIVOS------//
-////////////////////////////////////
+
+// ELIMINANDO ATRACTIVOS
+
 app.delete("/mantenedor/:atractivo_id", async (req, res) => {
   const atractivo_id = Number(req.params.atractivo_id);
   if (isNaN(atractivo_id)) {
@@ -64,9 +64,9 @@ app.delete("/mantenedor/:atractivo_id", async (req, res) => {
   }
 });
 
-///////////////////////////////////////
-//------MODIFICANDO ATRACTIVOS------//
-/////////////////////////////////////
+
+// MODIFICANDO ATRACTIVOS
+
 app.post('/mantenedor/update', async (req, res) => {
   // let datos = req.body;
   // console.log(datos);
@@ -82,9 +82,8 @@ app.post('/mantenedor/update', async (req, res) => {
   // res.redirect('/admin');
 });
 
-///////////////////////////////////////////////
-//----Atractivos Mantenedor EDITOR----//
-/////////////////////////////////////////////
+// Atractivos Mantenedor 'Editor'
+
 app.get("/editor/:regiones_id", async (req, res) => {
   const regiones_id = req.params.regiones_id;
   const resultados = await fetch(`http://localhost:4000/api/v1/atractivos/${regiones_id}`);
@@ -93,9 +92,8 @@ app.get("/editor/:regiones_id", async (req, res) => {
   res.render("editor", { "atractivos": data })
 })
 
-/////////////////////////////////////////////////
-//----COUNT Atractivos - Mantenedor EDITOR----//
-///////////////////////////////////////////////
+// COUNT Atractivos - Mantenedor EDITOR
+
 app.get("/api/v1/atractivos/cantidad/:id_cat", async (req, res) => {
   const id_cat = req.params.id_cat;
   const resultados = await fetch(`http://localhost:4000/api/v1/atractivos/cantidad/${id_cat}`);

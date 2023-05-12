@@ -1,37 +1,57 @@
-$ nodemon api/server.js
-$ nodemon app.js
+# Talento Digital
+### Proyecto 'Ruta Segura'
+RutaSegura busca entregar información relevante para quienes están planificando un viaje dentro de Chile, mostrando datos como la distancia total, duración del viaje y  atractivos por región de destino.
 
-# Talento Digital - Proyecto 'Ruta Segura'
-RutaSegura busca entregar información relevante para personas que están planificando un viaje dentro de Chile.
-Permite elegir una región de origen y una de destino, mostrando automaticamente un trazado en mapa, información como la distancia total
-y duración aproximada del viaje.
+## Funcionamiento General
+Se cuenta con una vista index que muestra cabecera con opciones tipo select, una sección resumen que muestra la Tº actual según la ubicación del equipo (***navigator.geolocation***) pasándole datos de coordenadas a una api (weatherapi.com) para consumir esa información.
+Al elegir una región de origen y una de destino, se pasan coordenadas una api que controla el mapa pero que además entrega información de distancias, duración, etc (Leafletjs.com)
 
-## Clonar proyecto
+### Login / Mantenedor
+El login solo está funcionando como redireccionador a la vista de **Admin** (*cuando el usuario es 'admin'*) o a la vista de **Editor** cuando quien ingresa tiene cualquier nombre de usuario diferente a 'admin". Todo esto manejado por lógica condicional.
+
+En la vista de ***Admin*** se cuenta con selectores para mostrar los atractivos por región:
+![image](https://github.com/munozmanuel/TD_RUTA_SEGURA/assets/108648624/fcda29f3-3cdf-419a-8a0b-cfdecd902bed)
+
+
+
+
+
+
+### Tecnologías utilizadas:
+Javascript, Html, Css, Postgres, Express, NodeJs
+
+
+
+
+## Estructura general del proyecto
+Para fines prácticos, se decidió dejar la aplicación y api dentro del mismo proyecto. En **API/server.js** se incluye tanto la configuración como las peticiones a la base de datos.
+En  **routes** se encuentran tanto las rutas básicas, como las rutas para CRUD.
+
+### Api estará escuchando en puerto 4000
 ```bash
-  git clone https://github.com/nash99/PORTAFOLIO-TALENTO-DIGITAL
+  nodemon api/server.js
+```
+### APP estará escuchando en puerto 3000
+```bash
+  nodemon app.js
+```
+## Clonar repositorio
+```bash
+  git clone https://github.com/munozmanuel/TD_RUTA_SEGURA.git
+```
+## Instalar dependencias
+### Para instalar los paquetes necesarios, usar:
+```bash
+npm i express pg hbs nodemon body-parser cors bcryptjs cookie-parser dotenv express-session jsonwebtoken method-override node-fetch pdfkit sweetalert2
 ```
 
-## Herramientas utilizadas:
-Javascript, HTML, CSS, MYSQL, EXPRESS, NODE JS, HBS, EXPRESS
+## Base de datos / Postgres
+Se incluye una carpeta dbScripts que contiene los scripts necesarios para la creación de bbdd, tablas y población de tablas con datos básicos. 
+```bash
+ FALTAN LOS SCRIPTS
+```
 
-## REQUISITOS MINIMOS
-```bash
-  1.NODE JS
-```
-## Accesos
-```bash
-  Usuario normal: juanperezmusic@gmail.com / password
-  Administrador: admin@gmail.com / 123
-```
-## Instalación BASE DE DATOS LOCAL
-Ejecutar codigo en mysqlworkbench ubicado en cualquiera de los dos proyectos al igual que agregar el codigo de procedimiento y procedimiento 2 a un nuevo procedimiento almacenado por separado para crearlos de forma correcta
-```bash
-  ubicacion: db/database.sql
-  ubicacion: db/procedimiento.sql
-  ubicacion: db/procedimiento2.sql
-```
-## Instalación PORTAFOLIO-TALENTO-DIGITAL
-https://github.com/nash99/PORTAFOLIO-TALENTO-DIGITAL
+
 
 POR DEFECTO UTILIZARA EL PUERTO 3000
 

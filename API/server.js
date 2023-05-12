@@ -11,11 +11,6 @@ app.use(express.json());
 app.use(cors());
 app.use(methodOverride("_method", { methods: ["GET", "POST"] }));
 
-//Inicializando Server en puerto 4000
-app.listen(4000, () => {
-  console.log("Escuchando en el 4000");
-})
-
 //Middlewares
 // Configurar body-parser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -24,9 +19,12 @@ app.use(bodyParser.json());
 //Sirviendo carpeta publica
 app.use(express.static(__dirname + '/public'));
 
-///////////////////////////////////////////////
-//----OBTENIENDO ATRACTIVOS SEGÚN REGION----//
-/////////////////////////////////////////////
+//Inicializando Server en puerto 4000
+app.listen(4000, () => {
+  console.log("Escuchando en el 4000");
+})
+
+// OBTENIENDO ATRACTIVOS SEGÚN REGION
 
 app.get("/api/v1/atractivos/:regiones_id", async (req, res) => {
   const regiones_id = parseInt(req.params.regiones_id); // parsear el parámetro a Integer
@@ -39,22 +37,22 @@ app.get("/api/v1/atractivos/:regiones_id", async (req, res) => {
   }
 });
 
-//----Obtener atractivos por Categorias----//
+// Obtener atractivos por categoría
+
 app.get("/api/v1/atractivos/categoria/:id_cat", async (req, res) => {
   const id_cat = req.params.id_cat
     const resultado = await pool.query("SELECT atractivos.atractivo_id, atractivos.nombre, atractivos.imgurl, atractivos.descripcion, atractivos.categorias_id, atractivos.regiones_id FROM atractivos INNER JOIN categorias ON atractivos.categorias_id = categorias.id_cat WHERE categorias.id_cat = $1", [id_cat]);
     res.json(resultado.rows)
   });
 
-//----Obtener Listado Total para mostrar en la vista de 'Listado Total' ----//
+// Obtener Listado Total para mostrar en la vista de 'Listado Total' ----//
 app.get("/api/v1/listadoAtractivos", async (req, res) => {
     const resultado = await pool.query("SELECT atractivos.atractivo_id, atractivos.nombre, atractivos.imgurl, atractivos.descripcion, atractivos.categorias_id, atractivos.regiones_id FROM atractivos INNER JOIN categorias ON atractivos.categorias_id = categorias.id_cat WHERE categorias.id_cat = atractivos.categorias_id ORDER BY atractivo_id desc ");
     res.json(resultado.rows)
   });
 
-////////////////////////////////////
-//------AGREGANDO ATRACTIVOS------//
-///////////////////////////////////
+
+// AGREGANDO ATRACTIVOS
 
 app.post("/api/v1/atractivos/agregar", async (req, res) => {
   const { nombre, descripcion, imgurl, regiones_id, categorias_id } = req.body;
@@ -69,9 +67,8 @@ app.post("/api/v1/atractivos/agregar", async (req, res) => {
   }
 });
 
-//////////////////////////////////////
-//------ELIMINANDO ATRACTIVOS------//
-////////////////////////////////////
+
+// ELIMINANDO ATRACTIVOS
 
 app.delete("/api/v1/atractivos/:atractivo_id", async (req, res) => {
   try {
@@ -87,9 +84,8 @@ app.delete("/api/v1/atractivos/:atractivo_id", async (req, res) => {
   }
 });
 
-///////////////////////////////////////
-//------MODIFICANDO ATRACTIVOS------//
-/////////////////////////////////////
+
+// MODIFICANDO ATRACTIVOS
 
 app.put("/api/v1/atractivos/editar/:atractivo_id", async (req, res) => {
   const {atractivo_id} = req.params
@@ -99,9 +95,8 @@ app.put("/api/v1/atractivos/editar/:atractivo_id", async (req, res) => {
     res.json({})
 })
 
-///////////////////////////////////////
-//--------CONTANDO ATRACTIVOS-------//
-/////////////////////////////////////
+
+// CONTANDO ATRACTIVOS
 
 app.get("/api/v1/atractivos/cantidad/count", async (req, res) => {
   const resultado = await pool.query("SELECT COUNT(atractivo_id) FROM atractivos");
