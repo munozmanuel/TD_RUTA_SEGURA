@@ -9,8 +9,11 @@ Al elegir una región de origen y una de destino, se pasan coordenadas una api q
 ### Login / Mantenedor
 El login solo está funcionando como redireccionador a la vista de **Admin** (*cuando el usuario es 'admin'*) o a la vista de **Editor** cuando quien ingresa tiene cualquier nombre de usuario diferente a 'admin". Todo esto manejado por lógica condicional.
 La función del mantenedor es crear, editar o eliminar los atractivos, que posteriormente se estarán mostrando en el index según la región de destino que se elija.
-##### **En caso de no visualizar la siguiente imagen, buscar en: /public/imgs/assets/loginMantenedor.jpg**
 
+##### **Haga click en la siguiente imagen para ver un demo en video** (en caso de no ver link, revisar carpeta /demo)
+[<img src="https://github.com/munozmanuel/TD_RUTA_SEGURA/blob/master/demo/posterframe.jpg" width="50%" align="center">](https://www.youtube.com/watch?v=eRSMLwFr31U "demostración")
+
+##### **En caso de no visualizar la siguiente infografía, buscar en: /public/imgs/assets/loginMantenedor.jpg**
 [<img src="https://i.ytimg.com/vi/Hc79sDi3f0U/maxresdefault.jpg" width="50%">](https://youtu.be/eRSMLwFr31U "demostración")
 
 ![image](https://github.com/munozmanuel/TD_RUTA_SEGURA/blob/master/public/imgs/assets/loginMantenedor.jpg)
